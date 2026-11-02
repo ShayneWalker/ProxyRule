@@ -21,42 +21,35 @@
 
 ### 使用边界
 
-本规则由截图转录而来，尚未通过实际应用流量验证，不能保证移除全部广告，也不提供跳过广告验证或解锁付费内容的能力。广告加载失败时，应用仍可能保留广告占位、等待时间，或无法领取激励奖励。
+本规则尚不能保证移除全部广告，也不提供跳过广告验证或解锁付费内容的能力。广告加载失败时，应用仍可能保留广告占位、等待时间，或无法领取激励奖励。
 
-规则按域名生效，不限定红果漫剧应用。其他应用访问相同域名时也会被拦截；部分通用 SDK 接口可能影响登录、内容加载或其他功能。实际效果取决于应用版本、广告接口及流量是否经过 Surge。
+规则按域名生效，不限定红果应用。其他应用访问相同域名时也会被拦截；部分通用 SDK 接口可能影响登录、内容加载或其他功能。实际效果取决于应用版本、广告接口及流量是否经过 Surge。
 
 ## 配置方法
 
 下面两种方式任选一种。将示例规则加入现有配置的 `[Rule]` 段，不要用示例覆盖整个配置，也无需重复创建 `[Rule]` 段。
 
-### 方式一：引用本地文件
 
-将 `hongguo-ads.list` 放到 **Surge 配置文件所在目录**，在 `[Rule]` 段靠前位置加入：
+#### MAIN 分支规则链接
 
+https://raw.githubusercontent.com/ShayneWalker/rule/refs/heads/main/Surge/hongguo-ads/hongguo-ads.list
+
+#### MAIN 分支 CDN
+
+https://cdn.jsdelivr.net/gh/ShayneWalker/rule@main/Surge/hongguo-ads/hongguo-ads.list
+
+使用 GitHub Raw 地址时，在 `[Rule]` 段加入：
 ```ini
 [Rule]
-RULE-SET,hongguo-ads.list,REJECT
+RULE-SET,https://raw.githubusercontent.com/ShayneWalker/rule/refs/heads/main/Surge/hongguo-ads/hongguo-ads.list,REJECT
 # 下方保留原有分流规则和 FINAL 规则
 ```
 
-相对路径以 Surge 配置文件所在目录为基准，与本仓库的所在位置无关。如果文件放在配置目录的 `Surge` 子目录中，则使用：
-
+也可改用 CDN 地址，以下规则与上面的 Raw 规则任选一条，无需同时添加：
 ```ini
-RULE-SET,Surge/hongguo-ads.list,REJECT
+RULE-SET,https://cdn.jsdelivr.net/gh/ShayneWalker/rule@main/Surge/hongguo-ads/hongguo-ads.list,REJECT
 ```
-
-### 方式二：引用远程文件
-
-将规则文件托管到可直接返回纯文本内容的 HTTPS 地址，然后加入：
-
-```ini
-[Rule]
-RULE-SET,https://example.com/rules/hongguo-ads.list,REJECT,update-interval=86400
-# 下方保留原有分流规则和 FINAL 规则
-```
-
-**`https://example.com/rules/hongguo-ads.list` 是占位地址，必须替换为实际规则地址。** 如果使用 GitHub，应使用文件的 Raw 地址，而不是文件预览页面地址。`update-interval=86400` 表示每 24 小时检查更新；首次使用时需能成功下载规则文件。
-
+首次使用时需能成功下载规则文件；CDN 可能存在缓存延迟。以上链接均指向 `main` 分支。
 远程引用适合在多台设备间共享规则，也适合无法方便放置本地文件的场景。
 
 ### 启用与检查
