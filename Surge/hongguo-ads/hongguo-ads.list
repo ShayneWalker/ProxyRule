@@ -1,0 +1,28 @@
+# 红果短剧&红果漫剧去广告相关规则
+# 策略由引用本文件的 RULE-SET 规则指定。
+
+# 穿山甲广告联盟（Pangle）
+DOMAIN-SUFFIX,pangolin-sdk-toutiao.com
+DOMAIN-SUFFIX,pangolin-sdk-toutiao-b.com
+DOMAIN-SUFFIX,pglstatp-toutiao.com
+DOMAIN,api-access.pangolin-sdk-toutiao.com
+DOMAIN,api-access.pangolin-sdk-toutiao1.com
+DOMAIN,log-api.pangolin-sdk-toutiao.com
+
+# 字节广告投放 / 配置及 SDK 接口
+DOMAIN-SUFFIX,ads3-normal.zijieapi.com
+DOMAIN-SUFFIX,ads5-normal.zijieapi.com
+DOMAIN,p6-ad-sign.byteimg.com
+DOMAIN,p9-ad-sign.byteimg.com
+DOMAIN,ads0-normal-lq.zijieapi.com
+DOMAIN,ads1-normal-lq.zijieapi.com
+DOMAIN,ads2-normal-lq.zijieapi.com
+DOMAIN,ads3-normal-lq.zijieapi.com
+DOMAIN,ads4-normal-lq.zijieapi.com
+DOMAIN,ads5-normal-lq.zijieapi.com
+DOMAIN,effect.snssdk.com
+DOMAIN,i.snssdk.com
+DOMAIN,is.snssdk.com
+DOMAIN,i-lq-snssdk.com
+DOMAIN,mcs.snssdk.com
+DOMAIN,security-lq.snssdk.com
