@@ -1,0 +1,28 @@
+# 红果短剧&红果漫剧去广告相关规则
+# Quantumult X 原生分流规则，匹配后使用 reject 策略。
+
+# 穿山甲广告联盟（Pangle）
+host-suffix,pangolin-sdk-toutiao.com,reject
+host-suffix,pangolin-sdk-toutiao-b.com,reject
+host-suffix,pglstatp-toutiao.com,reject
+host,api-access.pangolin-sdk-toutiao.com,reject
+host,api-access.pangolin-sdk-toutiao1.com,reject
+host,log-api.pangolin-sdk-toutiao.com,reject
+
+# 字节广告投放 / 配置及 SDK 接口
+host-suffix,ads3-normal.zijieapi.com,reject
+host-suffix,ads5-normal.zijieapi.com,reject
+host,p6-ad-sign.byteimg.com,reject
+host,p9-ad-sign.byteimg.com,reject
+host,ads0-normal-lq.zijieapi.com,reject
+host,ads1-normal-lq.zijieapi.com,reject
+host,ads2-normal-lq.zijieapi.com,reject
+host,ads3-normal-lq.zijieapi.com,reject
+host,ads4-normal-lq.zijieapi.com,reject
+host,ads5-normal-lq.zijieapi.com,reject
+host,effect.snssdk.com,reject
+host,i.snssdk.com,reject
+host,is.snssdk.com,reject
+host,i-lq-snssdk.com,reject
+host,mcs.snssdk.com,reject
+host,security-lq.snssdk.com,reject
